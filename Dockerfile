@@ -96,11 +96,11 @@ COPY ./files/nn_config.php /var/www/newznab/www/config.php
 RUN chmod 777 /var/www/newznab/www/config.php \
     && USER=root /bin/bash -c 'sed -i "s/%%dbuser%%/$USER/" /var/www/newznab/www/config.php' \
     && PASS=$db_root_pass /bin/bash -c 'sed -i "s/%%dbpass%%/$PASS/" /var/www/newznab/www/config.php' \
-    && NAME=$DB_NN_NAME /bin/bash -c 'sed -i "s/%%dbname%%/$NAME/" /var/www/newznab/www/config.php'
-    && NAME=$NH_HOST /bin/bash -c 'sed -i "s/%%nhhost%%/$NAME/" /var/www/newznab/www/config.php'
-    && NAME=$NH_PORT /bin/bash -c 'sed -i "s/%%nhport%%/$NAME/" /var/www/newznab/www/config.php'
-    && NAME=$NH_USER /bin/bash -c 'sed -i "s/%%nhuser%%/$NAME/" /var/www/newznab/www/config.php'
-    && NAME=$NH_PASS /bin/bash -c 'sed -i "s/%%nhpass%%/$NAME/" /var/www/newznab/www/config.php'
+    && NAME=$DB_NN_NAME /bin/bash -c 'sed -i "s/%%dbname%%/$NAME/" /var/www/newznab/www/config.php' \
+    && NAME=$NH_HOST /bin/bash -c 'sed -i "s/%%nhhost%%/$NAME/" /var/www/newznab/www/config.php' \
+    && NAME=$NH_PORT /bin/bash -c 'sed -i "s/%%nhport%%/$NAME/" /var/www/newznab/www/config.php' \
+    && NAME=$NH_USER /bin/bash -c 'sed -i "s/%%nhuser%%/$NAME/" /var/www/newznab/www/config.php' \
+    && NAME=$NH_PASS /bin/bash -c 'sed -i "s/%%nhpass%%/$NAME/" /var/www/newznab/www/config.php' \
     && NAME=$NH_SSL /bin/bash -c 'sed -i "s/%%nhssl%%/$NAME/" /var/www/newznab/www/config.php'
 
 EXPOSE 80
